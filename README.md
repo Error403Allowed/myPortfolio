@@ -38,25 +38,21 @@ npm run dev
 
 ## AI Chatbot setup
 
-The site includes a bottom-right chatbot widget and a secure Hugging Face proxy script with API key rotation.
+The site includes a bottom-right chatbot widget that calls Hugging Face directly from the browser.
 
 1. Copy `.env.example` to `.env` and add your API keys.
-2. Start the proxy in one terminal:
-
-```sh
-npm run chat:proxy
-```
-
-3. Start the Vite app in another terminal:
+2. Set `VITE_HF_API_KEY` in `.env` (or `VITE_HF_API_KEYS` as a comma-separated list).
+3. Optional: set `VITE_HF_KEY_ROTATION_SECONDS` (default `15`) to rotate through `VITE_HF_API_KEYS`.
+4. Start the Vite app:
 
 ```sh
 npm run dev
 ```
 
 Notes:
-- Keep API keys only in server env vars (`API_KEY_1`, `API_KEY_2`).
-- The proxy rotates keys per request and automatically fails over to the next key on rate-limit/transient errors.
-- If frontend and proxy are on different origins, keep `VITE_CHAT_API_URL` and `CHAT_ALLOWED_ORIGIN` aligned.
+- This is client-side only, so `VITE_HF_API_KEY` is exposed to the browser.
+- Rotating exposed client keys does not provide strong security; it mostly spreads usage across keys.
+- Use a scoped key with rate limits and rotate it regularly.
 
 **Edit a file directly in GitHub**
 

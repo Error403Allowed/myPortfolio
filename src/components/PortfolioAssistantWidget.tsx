@@ -11,16 +11,38 @@ interface ChatMessage {
 }
 
 interface ChatApiPayload {
-  answer?: string;
-  error?: string;
+  choices?: Array<{
+    message?: {
+      content?: string;
+    };
+  }>;
+  error?: {
+    message?: string;
+  } | string;
 }
 
-const CHAT_API_URL = import.meta.env.VITE_CHAT_API_URL ?? "/api/chat";
+const HF_CHAT_API_URL = "https://router.huggingface.co/v1/chat/completions";
+const HF_API_KEY = import.meta.env.VITE_HF_API_KEY;
+const HF_API_KEYS = (import.meta.env.VITE_HF_API_KEYS ?? "")
+  .split(",")
+  .map((key) => key.trim())
+  .filter(Boolean);
+const HF_MODEL = import.meta.env.VITE_HF_MODEL ?? "meta-llama/Llama-3.1-8B-Instruct";
+const HF_KEY_ROTATION_SECONDS = Number(import.meta.env.VITE_HF_KEY_ROTATION_SECONDS ?? 15);
 const MAX_HISTORY_MESSAGES = 12;
 const FALLBACK_ANSWER = "I couldn't generate a useful response for that yet.";
 const NETWORK_ERROR_ANSWER =
   "I'm having trouble reaching the AI service right now. Please try again in a few seconds.";
 const THINKING_TEXT = "Thinking...";
+const MISSING_KEY_ANSWER =
+  "Missing `VITE_HF_API_KEY` (or `VITE_HF_API_KEYS`) in `.env`, so chat is disabled right now.";
+const SYSTEM_PROMPT = `
+You are the portfolio assistant for Shrravan Bala.
+- Keep responses short and clear: 1 sentence preferred, 2 sentences max.
+- Answer the user directly first.
+- Focus on Shrravan's projects, skills, and portfolio context.
+- If details are missing, say that the detail is not listed yet.
+`.trim();
 
 const SUGGESTED_PROMPTS = [
   "What should I know about this portfolio in 30 seconds?",
@@ -33,6 +55,20 @@ const createMessage = (role: Role, content: string): ChatMessage => ({
   role,
   content,
 });
+
+const getApiErrorMessage = (payload: ChatApiPayload) => {
+  if (typeof payload.error === "string") return payload.error;
+  return payload.error?.message ?? "Chat request failed.";
+};
+
+const resolveApiKey = () => {
+  const keyPool = HF_API_KEYS.length > 0 ? HF_API_KEYS : HF_API_KEY?.trim() ? [HF_API_KEY.trim()] : [];
+  if (keyPool.length === 0) return null;
+
+  const intervalMs = Math.max(10, HF_KEY_ROTATION_SECONDS) * 1000;
+  const slot = Math.floor(Date.now() / intervalMs);
+  return keyPool[slot % keyPool.length];
+};
 
 const getMessageBubbleClassName = (role: Role) =>
   `max-w-[88%] rounded-xl px-3 py-2 text-sm leading-relaxed ${
@@ -80,21 +116,39 @@ const PortfolioAssistantWidget = () => {
     setInputValue("");
     setIsSending(true);
 
+    const activeApiKey = resolveApiKey();
+    if (!activeApiKey) {
+      setMessages((prev) => [...prev, createMessage("assistant", MISSING_KEY_ANSWER)]);
+      setIsSending(false);
+      return;
+    }
+
     try {
-      const response = await fetch(CHAT_API_URL, {
+      const response = await fetch(HF_CHAT_API_URL, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ messages: messageHistory }),
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${activeApiKey}`,
+        },
+        body: JSON.stringify({
+          model: HF_MODEL,
+          temperature: 0.3,
+          max_tokens: 90,
+          messages: [{ role: "system", content: SYSTEM_PROMPT }, ...messageHistory],
+        }),
       });
 
       const data: ChatApiPayload = await response.json().catch(() => ({}));
-      const answer =
-        typeof data.answer === "string" && data.answer.trim()
-          ? data.answer.trim()
-          : FALLBACK_ANSWER;
+      const answer = data.choices?.[0]?.message?.content?.trim() || FALLBACK_ANSWER;
 
       if (!response.ok) {
-        throw new Error(data.error ?? "Chat request failed.");
+        const rawError = getApiErrorMessage(data);
+        const statusError =
+          response.status === 401 || response.status === 403
+            ? "Invalid Hugging Face API key. Update `VITE_HF_API_KEY`."
+            : `AI request failed: ${rawError}`;
+        setMessages((prev) => [...prev, createMessage("assistant", statusError)]);
+        return;
       }
 
       setMessages((prev) => [...prev, createMessage("assistant", answer)]);
