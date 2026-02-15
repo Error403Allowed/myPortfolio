@@ -13,7 +13,7 @@ const SplashScreen = ({ onEnter }: SplashScreenProps) => {
     >
       {/* Floating orb */}
       <motion.div
-        className="absolute w-[400px] h-[400px] rounded-full opacity-20"
+        className="absolute w-[260px] h-[260px] sm:w-[400px] sm:h-[400px] rounded-full opacity-20"
         style={{
           background: "radial-gradient(circle, hsl(var(--glow) / 0.6), transparent 70%)",
         }}
@@ -28,7 +28,7 @@ const SplashScreen = ({ onEnter }: SplashScreenProps) => {
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.2 }}
-        className="text-center z-10"
+        className="text-center z-10 px-4"
       >
         <motion.p
           className="font-mono text-sm tracking-[0.3em] uppercase text-muted-foreground mb-4"
@@ -36,11 +36,11 @@ const SplashScreen = ({ onEnter }: SplashScreenProps) => {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.5 }}
         >
-          Welcome
+          Welcome to
         </motion.p>
 
         <motion.h1
-          className="text-5xl md:text-7xl font-bold glow-text text-primary mb-8"
+          className="text-4xl sm:text-5xl md:text-7xl font-bold glow-text text-primary mb-8"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.7, duration: 0.6 }}
@@ -50,7 +50,7 @@ const SplashScreen = ({ onEnter }: SplashScreenProps) => {
 
         <motion.button
           onClick={onEnter}
-          className="glass glow-border px-8 py-4 rounded-full font-medium text-foreground tracking-wide
+          className="glass glow-border px-6 sm:px-8 py-3 sm:py-4 rounded-full font-medium text-foreground tracking-wide
                      hover:glow-border-strong transition-all duration-300 cursor-pointer group"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}

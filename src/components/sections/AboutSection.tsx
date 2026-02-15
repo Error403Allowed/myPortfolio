@@ -14,8 +14,8 @@ const AboutSection = () => {
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="about" className="py-32 px-6" ref={ref}>
-      <div className="max-w-6xl mx-auto">
+    <section id="about" className="py-24 md:py-32 px-4 sm:px-6" ref={ref}>
+      <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -25,7 +25,7 @@ const AboutSection = () => {
             About Me
           </p>
           <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-8">
-            Passionate about building<br />
+            Passionate about building<br className="hidden sm:block" />
             <span className="text-primary">the future</span>
           </h2>
         </motion.div>

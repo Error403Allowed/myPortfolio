@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
 const navItems = [
-  { label: "Home", href: "#hero" },
   { label: "About", href: "#about" },
   { label: "Projects", href: "#projects" },
   { label: "Resume", href: "#resume" },
@@ -36,7 +35,8 @@ const Navbar = () => {
       animate={{ y: 0 }}
       transition={{ delay: 0.3, duration: 0.5 }}
     >
-      <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4">
+        <div className="flex items-center justify-between">
         <a
           href="#hero"
           onClick={(e) => handleClick(e, "#hero")}
@@ -51,6 +51,19 @@ const Navbar = () => {
               href={item.href}
               onClick={(e) => handleClick(e, item.href)}
               className="text-sm font-mono tracking-wider text-muted-foreground hover:text-primary transition-colors duration-300"
+            >
+              {item.label}
+            </a>
+          ))}
+        </div>
+        </div>
+        <div className="mt-3 flex md:hidden items-center gap-4 overflow-x-auto pb-1">
+          {navItems.map((item) => (
+            <a
+              key={item.label}
+              href={item.href}
+              onClick={(e) => handleClick(e, item.href)}
+              className="text-xs font-mono tracking-wider text-muted-foreground hover:text-primary transition-colors duration-300 whitespace-nowrap"
             >
               {item.label}
             </a>

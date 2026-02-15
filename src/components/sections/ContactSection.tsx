@@ -1,12 +1,12 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { Mail, Github, Linkedin, Twitter, Phone } from "lucide-react";
+import { Mail, Phone } from "lucide-react";
+import { GitHubIcon, LinkedInIcon } from "../icons/BrandIcons";
 
 const socials = [
-  { icon: Github, label: "GitHub", href: "#" },
-  { icon: Linkedin, label: "LinkedIn", href: "#" },
-  { icon: Twitter, label: "Twitter", href: "#" },
-  { icon: Mail, label: "Email", href: "mailto:hello@example.com" },
+  { icon: GitHubIcon, label: "GitHub", href: "https://github.com/Error403Allowed", target: "_blank", rel: "noopener" },
+  { icon: LinkedInIcon, label: "LinkedIn", href: "#", target: "_blank", rel: "noopener" },
+  { icon: Mail, label: "Email", href: "mailto:shrravan.bala@gmail.com", target: "_blank", rel: "noopener" },
 ];
 
 const ContactSection = () => {
@@ -14,8 +14,8 @@ const ContactSection = () => {
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="contact" className="py-32 px-6" ref={ref}>
-      <div className="max-w-3xl mx-auto text-center">
+    <section id="contact" className="py-24 md:py-32 px-4 sm:px-6" ref={ref}>
+      <div className="max-w-4xl mx-auto text-center">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -52,7 +52,7 @@ const ContactSection = () => {
               <p className="font-semibold text-foreground group-hover:text-primary transition-colors">
                 Call Me
               </p>
-              <p className="text-sm text-muted-foreground">+1 (234) 567-890</p>
+              <p className="text-sm text-muted-foreground">+61 423 920 080</p>
             </div>
           </a>
           <a
@@ -67,7 +67,7 @@ const ContactSection = () => {
               <p className="font-semibold text-foreground group-hover:text-primary transition-colors">
                 Email Me
               </p>
-              <p className="text-sm text-muted-foreground">hello@example.com</p>
+              <p className="text-sm text-muted-foreground">shrravan.bala@gmail.com</p>
             </div>
           </a>
         </motion.div>
@@ -82,6 +82,8 @@ const ContactSection = () => {
             <a
               key={social.label}
               href={social.href}
+              target={social.target}
+              rel={social.rel}
               className="glass w-12 h-12 rounded-full flex items-center justify-center
                          hover:glow-border transition-all duration-300 group"
               title={social.label}

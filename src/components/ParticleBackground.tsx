@@ -36,7 +36,7 @@ const ParticleBackground = () => {
     window.addEventListener("mousemove", handleMouse);
 
     // Initialize particles
-    const count = Math.min(60, Math.floor((window.innerWidth * window.innerHeight) / 25000));
+    const count = Math.min(60, Math.floor((window.innerWidth * window.innerHeight) / 2500));
     for (let i = 0; i < count; i++) {
       particlesRef.current.push(createParticle(canvas.width, canvas.height));
     }

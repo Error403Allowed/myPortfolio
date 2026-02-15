@@ -2,12 +2,12 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
 const skills = [
-  { name: "React / Next.js", level: 95 },
-  { name: "TypeScript", level: 90 },
+  { name: "React / Next.js", level: 81 },
+  { name: "TypeScript", level: 83 },
   { name: "Tailwind CSS", level: 92 },
-  { name: "Node.js", level: 85 },
-  { name: "UI/UX Design", level: 88 },
-  { name: "Python", level: 78 },
+  { name: "Node.js", level: 87 },
+  { name: "UI/UX Design", level: 94 },
+  { name: "Python", level: 79 },
 ];
 
 const SkillsSection = () => {
@@ -15,8 +15,8 @@ const SkillsSection = () => {
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="skills" className="py-32 px-6" ref={ref}>
-      <div className="max-w-4xl mx-auto">
+    <section id="skills" className="py-24 md:py-32 px-4 sm:px-6" ref={ref}>
+      <div className="max-w-5xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -38,9 +38,9 @@ const SkillsSection = () => {
               animate={inView ? { opacity: 1, x: 0 } : {}}
               transition={{ delay: 0.2 + i * 0.1, duration: 0.5 }}
             >
-              <div className="flex justify-between mb-2">
-                <span className="font-medium text-foreground">{skill.name}</span>
-                <span className="font-mono text-sm text-primary">{skill.level}%</span>
+              <div className="flex items-start justify-between gap-3 mb-2">
+                <span className="font-medium text-foreground text-sm sm:text-base">{skill.name}</span>
+                <span className="font-mono text-xs sm:text-sm text-primary shrink-0">{skill.level}%</span>
               </div>
               <div className="w-full h-2 rounded-full bg-secondary overflow-hidden">
                 <motion.div
