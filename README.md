@@ -38,21 +38,20 @@ npm run dev
 
 ## AI Chatbot setup
 
-The site includes a bottom-right chatbot widget that calls Hugging Face directly from the browser.
+The site includes a bottom-right chatbot widget that calls a backend proxy at `/api/chat`.
 
 1. Copy `.env.example` to `.env` and add your API keys.
-2. Set `VITE_HF_API_KEY` in `.env` (or `VITE_HF_API_KEYS` as a comma-separated list).
-3. Optional: set `VITE_HF_KEY_ROTATION_SECONDS` (default `15`) to rotate through `VITE_HF_API_KEYS`.
-4. Start the Vite app:
+2. Keep `VITE_CHAT_API_URL=/api/chat`.
+3. Start the Vite app:
 
 ```sh
 npm run dev
 ```
 
 Notes:
-- This is client-side only, so `VITE_HF_API_KEY` is exposed to the browser.
-- Rotating exposed client keys does not provide strong security; it mostly spreads usage across keys.
-- Use a scoped key with rate limits and rotate it regularly.
+- `API_KEY_1`, `API_KEY_2`, and `HF_MODEL` are server-side values; they are not exposed to browser code.
+- In local development, `/api/chat` is served by Vite middleware, so no separate `chat:proxy` process is required.
+- `npm run chat:proxy` remains available only if you want to run the proxy as a standalone Node server.
 
 **Edit a file directly in GitHub**
 
