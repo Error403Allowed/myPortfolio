@@ -5,6 +5,7 @@ import Portfolio from "@/components/Portfolio";
 import ColorPicker from "@/components/ColorPicker";
 import ParticleBackground from "@/components/ParticleBackground";
 import CursorGlow from "@/components/CursorGlow";
+import PortfolioAssistantWidget from "@/components/PortfolioAssistantWidget";
 
 const Index = () => {
   const [entered, setEntered] = useState(false);
@@ -29,6 +30,7 @@ const Index = () => {
       {entered && (
         <ColorPicker currentHue={accentHue} onHueChange={handleColorChange} />
       )}
+      {entered && <PortfolioAssistantWidget />}
     </div>
   );
 };

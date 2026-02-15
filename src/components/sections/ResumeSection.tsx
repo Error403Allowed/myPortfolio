@@ -26,7 +26,8 @@ const experience = [
 const resumeSkills = [
   { category: "Languages", items: ["JavaScript", "TypeScript", "Python"] },
   { category: "Frameworks", items: ["React", "Node.js", "Tailwind CSS"] },
-  { category: "Tools", items: ["Git", "VS Code"] },
+  { category: "Tools", items: ["Git", "VS Code", "Hugging Face"] },
+  { category: "AI", items: ["Prompt Engineering", "LLM API Integration", "Chatbot UX"] },
   { category: "Cloud/DevOps", items: ["AWS", "Supabase", "Vercel"] },
 ];
 
@@ -42,19 +43,19 @@ const certifications = [
 
 const extracurriculars = [
   {
-    title: "Club or Organization",
-    role: "President / Member",
-    desc: "Brief description of your involvement and impact.",
+    title: "Australian Informatics Olympiad",
+    role: "Participant",
+    desc: "Competed in the Australian Informatics Olympiad, a prestigious programming competition that challenges participants with complex algorithmic problems, fostering problem-solving skills and coding proficiency.",
   },
   {
-    title: "Volunteer Work",
-    role: "Volunteer",
-    desc: "What did you contribute? What was the outcome?",
+    title: "Chess Tournaments",
+    role: "Participant and Winner",
+    desc: "Participated in and won multiple local and regional chess tournaments, demonstrating strategic thinking and competitive excellence.",
   },
   {
-    title: "Personal Projects",
-    role: "Creator",
-    desc: "Side projects, hackathons, or creative endeavors.",
+    title: "Hornsby District Representative Cricket Team",
+    role: "Player",
+    desc: "Played cricket for the Hornsby District Representative Cricket Team, contributing to team success and developing teamwork and sportsmanship skills.",
   },
 ];
 

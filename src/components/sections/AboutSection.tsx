@@ -1,12 +1,12 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { Code2, Paintbrush, Rocket } from "lucide-react";
+import { BrainCircuit, Code2, Paintbrush } from "lucide-react";
 
 const highlights = [
   { icon: Code2, title: "Clean Code", desc: "Writing maintainable, scalable solutions" },
   { icon: Paintbrush, title: "Design", desc: "Crafting beautiful user interfaces" },
-  { icon: Rocket, title: "Performance", desc: "Optimized for speed and efficiency" },
+  { icon: BrainCircuit, title: "Applied AI", desc: "Building useful AI features with LLM APIs" },
 ];
 
 const AboutSection = () => {
@@ -39,11 +39,12 @@ const AboutSection = () => {
             <p className="text-muted-foreground leading-relaxed mb-6">
               I'm a developer who thrives at the intersection of creativity and technology.
               With a passion for clean design and efficient code, I build digital products
-              that are both beautiful and functional.
+              that are both beautiful and functional, including AI-powered experiences.
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              My journey spans across web development, UI/UX design, and creative problem-solving.
-              I believe every pixel matters, and every interaction should feel intentional.
+              My journey spans web development, UI/UX design, and AI integration.
+              I focus on shipping practical features like chat assistants, prompt-driven flows,
+              and model-backed tools that feel intentional for users.
             </p>
           </motion.div>
 

@@ -82,8 +82,8 @@ const HeroSection = () => {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.6, duration: 0.55 }}
             >
-              Creative student developer crafting immersive digital experiences
-              with clean code and bold visions.
+              Creative student developer building immersive products with clean
+              frontend engineering and practical AI integration.
             </motion.p>
 
             <motion.div

@@ -14,7 +14,7 @@ const projects = [
   },
   {
     title: "Analogy-based Learning App",
-    desc: "Analogix is a personalized study web app built with React + TypeScript (Vite), Tailwind CSS, and Framer Motion, using AI integrations to teach through AI-crafted, personalised analogies, run quizzes, and provide dashboard insights with calendar/deadline tracking.",
+    desc: "Analogix is a personalized study web app built with React + TypeScript (Vite), as well as Tailwind CSS, using AI integrations to teach through AI-crafted, personalised analogies, run quizzes, and provide dashboard insights with calendar capabilities and deadline tracking.",
     tags: ["React", "Typescript", "Tailwind"],
     link: "https://analogix.vercel.app",
     github: "https://github.com/Error403Allowed/Analogix",
@@ -92,9 +92,21 @@ const ProjectsSection = () => {
                   )}
                 </div>
 
-                <h3 className="text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
-                  {project.title}
-                </h3>
+                {hasLiveLink ? (
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors hover:text-primary"
+                    aria-label={`Open ${project.title}`}
+                  >
+                    {project.title}
+                  </a>
+                ) : (
+                  <h3 className="text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
+                    {project.title}
+                  </h3>
+                )}
                 <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
                   {project.desc}
                 </p>
