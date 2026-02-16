@@ -4,8 +4,8 @@ import { useRef } from "react";
 import { BrainCircuit, Code2, Paintbrush } from "lucide-react";
 
 const highlights = [
-  { icon: Code2, title: "Clean Code", desc: "Writing maintainable, scalable solutions" },
-  { icon: Paintbrush, title: "Design", desc: "Crafting beautiful user interfaces" },
+  { icon: Code2, title: "Innovative Ideas", desc: "Creating unique and practical solutions" },
+  { icon: Paintbrush, title: "Design", desc: "Crafting beautiful and functional user interfaces" },
   { icon: BrainCircuit, title: "Applied AI", desc: "Building useful AI features with LLM APIs" },
 ];
 

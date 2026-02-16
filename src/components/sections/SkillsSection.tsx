@@ -2,12 +2,12 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
 const skills = [
-  { name: "React / Next.js", score: 8.1 },
-  { name: "TypeScript", score: 8.3 },
-  { name: "Tailwind CSS", score: 9.2 },
-  { name: "Node.js", score: 8.7 },
-  { name: "UI/UX Design", score: 9.4 },
-  { name: "Python", score: 7.9 },
+  { name: "React / Next.js", score: 8 },
+  { name: "TypeScript", score: 8 },
+  { name: "Tailwind CSS", score: 9 },
+  { name: "Node.js", score: 8 },
+  { name: "UI/UX Design", score: 9 },
+  { name: "Python", score: 7 },
 ];
 
 const SkillsSection = () => {

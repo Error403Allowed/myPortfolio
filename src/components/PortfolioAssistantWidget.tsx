@@ -23,9 +23,9 @@ const PROXY_OFFLINE_HINT =
   "AI backend is not reachable. Restart `npm run dev` and try again.";
 
 const SUGGESTED_PROMPTS = [
-  "What should I know about this portfolio in 30 seconds?",
-  "Which projects are most relevant for a frontend internship?",
-  "What AI features has Shrravan built so far?",
+  "What does Shrravan's work experience look like?",
+  "What experience does Shrravan have with backend services?",
+  "What are some of Shrravan's projects involving AI?",
 ];
 
 const createMessage = (role: Role, content: string): ChatMessage => ({

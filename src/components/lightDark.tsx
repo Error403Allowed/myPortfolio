@@ -1,53 +1,37 @@
-// script.ts
+import { useCallback, useEffect, useState } from "react";
 
-// Define a type for the theme mode for better type safety
-type ThemeMode = 'light' | 'dark';
+export type ThemeMode = "light" | "dark";
 
-const storageKey = 'theme-mode';
+const THEME_STORAGE_KEY = "theme-mode";
 
-/**
- * Calculates the initial theme setting based on localStorage or system preference.
- */
-function getInitialTheme(): ThemeMode {
-    const storedTheme = localStorage.getItem(storageKey) as ThemeMode | null;
-    if (storedTheme) {
-        return storedTheme;
-    }
-    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    return systemPrefersDark ? 'dark' : 'light';
-}
+const getPreferredTheme = (): ThemeMode => {
+  if (typeof window === "undefined") return "dark";
 
-/**
- * Applies the given theme to the document element and saves it to localStorage.
- */
-function applyTheme(theme: ThemeMode): void {
-    document.documentElement.setAttribute('data-theme', theme);
-    localStorage.setItem(storageKey, theme);
-    updateButtonText(theme);
-}
+  const saved = window.localStorage.getItem(THEME_STORAGE_KEY);
+  if (saved === "light" || saved === "dark") {
+    return saved;
+  }
 
-/**
- * Toggles the theme between light and dark.
- */
-function toggleTheme(): void {
-    const currentTheme = document.documentElement.getAttribute('data-theme') as ThemeMode;
-    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-    applyTheme(newTheme);
-}
+  return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+};
 
-/**
- * Updates the button text based on the current theme.
- */
-function updateButtonText(theme: ThemeMode): void {
-    const toggleBtn = document.getElementById('toggle-mode');
-    if (toggleBtn) {
-        toggleBtn.textContent = `Switch to ${theme === 'dark' ? 'Light' : 'Dark'} Mode`;
-    }
-}
+const applyTheme = (theme: ThemeMode) => {
+  document.documentElement.classList.toggle("light", theme === "light");
+  document.documentElement.setAttribute("data-theme", theme);
+  document.documentElement.style.colorScheme = theme;
+};
 
-// Initial application of the theme on page load
-const initialTheme = getInitialTheme();
-applyTheme(initialTheme);
+export const useThemeMode = () => {
+  const [theme, setTheme] = useState<ThemeMode>(getPreferredTheme);
 
-// Add event listener to the toggle button
-document.getElementById('toggle-mode')?.addEventListener('click', toggleTheme);
+  useEffect(() => {
+    applyTheme(theme);
+    window.localStorage.setItem(THEME_STORAGE_KEY, theme);
+  }, [theme]);
+
+  const toggleTheme = useCallback(() => {
+    setTheme((current) => (current === "dark" ? "light" : "dark"));
+  }, []);
+
+  return { theme, setTheme, toggleTheme };
+};

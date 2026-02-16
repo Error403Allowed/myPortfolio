@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Moon } from 'lucide-react';
+import { Moon, Sun } from "lucide-react";
+import { useThemeMode } from "./lightDark";
 
 
 const navItems = [
@@ -9,11 +10,11 @@ const navItems = [
   { label: "Resume", href: "#resume" },
   { label: "Skills", href: "#skills" },
   { label: "Contact", href: "#contact" },
-  { label: "Dark Mode", href: "#", icon: <Moon size={16} /> },
 ];
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
+  const { theme, toggleTheme } = useThemeMode();
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
@@ -58,6 +59,15 @@ const Navbar = () => {
               {item.label}
             </a>
           ))}
+          <button
+            type="button"
+            onClick={toggleTheme}
+            className="glass rounded-full p-2 text-muted-foreground hover:text-primary transition-colors duration-300"
+            aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
+            title={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
+          >
+            {theme === "dark" ? <Sun size={16} /> : <Moon size={16} />}
+          </button>
         </div>
         </div>
         <div className="mt-3 flex md:hidden items-center gap-4 overflow-x-auto pb-1">
@@ -71,6 +81,15 @@ const Navbar = () => {
               {item.label}
             </a>
           ))}
+          <button
+            type="button"
+            onClick={toggleTheme}
+            className="glass rounded-full p-2 text-muted-foreground hover:text-primary transition-colors duration-300 shrink-0"
+            aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
+            title={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
+          >
+            {theme === "dark" ? <Sun size={14} /> : <Moon size={14} />}
+          </button>
         </div>
       </div>
     </motion.nav>
