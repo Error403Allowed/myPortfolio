@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import HeroSection from "@/components/sections/HeroSection";
 import AboutSection from "@/components/sections/AboutSection";
 import ProjectsSection from "@/components/sections/ProjectsSection";
@@ -9,11 +8,7 @@ import Navbar from "@/components/Navbar";
 
 const Portfolio = () => {
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.6 }}
-    >
+    <div>
       <Navbar />
       <HeroSection />
       <AboutSection />
@@ -21,7 +16,7 @@ const Portfolio = () => {
       <ResumeSection />
       <SkillsSection />
       <ContactSection />
-    </motion.div>
+    </div>
   );
 };
 

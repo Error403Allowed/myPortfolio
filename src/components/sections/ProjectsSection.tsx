@@ -74,6 +74,8 @@ const ProjectsSection = () => {
                       src={project.cover}
                       alt={`${project.title} cover`}
                       className="w-full h-full object-cover"
+                      loading="lazy"
+                      decoding="async"
                     />
                   ) : (
                     <>

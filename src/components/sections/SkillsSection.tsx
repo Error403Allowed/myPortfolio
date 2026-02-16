@@ -2,12 +2,12 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
 const skills = [
-  { name: "React / Next.js", level: 81 },
-  { name: "TypeScript", level: 83 },
-  { name: "Tailwind CSS", level: 92 },
-  { name: "Node.js", level: 87 },
-  { name: "UI/UX Design", level: 94 },
-  { name: "Python", level: 79 },
+  { name: "React / Next.js", score: 8.1 },
+  { name: "TypeScript", score: 8.3 },
+  { name: "Tailwind CSS", score: 9.2 },
+  { name: "Node.js", score: 8.7 },
+  { name: "UI/UX Design", score: 9.4 },
+  { name: "Python", score: 7.9 },
 ];
 
 const SkillsSection = () => {
@@ -40,7 +40,7 @@ const SkillsSection = () => {
             >
               <div className="flex items-start justify-between gap-3 mb-2">
                 <span className="font-medium text-foreground text-sm sm:text-base">{skill.name}</span>
-                <span className="font-mono text-xs sm:text-sm text-primary shrink-0">{skill.level}%</span>
+                <span className="font-mono text-xs sm:text-sm text-primary shrink-0">{skill.score.toFixed(1)}/10</span>
               </div>
               <div className="w-full h-2 rounded-full bg-secondary overflow-hidden">
                 <motion.div
@@ -50,7 +50,7 @@ const SkillsSection = () => {
                     boxShadow: `0 0 10px hsl(var(--glow) / 0.3)`,
                   }}
                   initial={{ width: 0 }}
-                  animate={inView ? { width: `${skill.level}%` } : { width: 0 }}
+                  animate={inView ? { width: `${skill.score * 10}%` } : { width: 0 }}
                   transition={{ delay: 0.4 + i * 0.1, duration: 1, ease: "easeOut" }}
                 />
               </div>

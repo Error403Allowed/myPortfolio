@@ -68,12 +68,12 @@ RESUME FACTS
   - Hornsby District Representative Cricket Team (Player).
 
 SKILLS BAR FACTS
-- React / Next.js: 81%
-- TypeScript: 83%
-- Tailwind CSS: 92%
-- Node.js: 87%
-- UI/UX Design: 94%
-- Python: 79%
+- React / Next.js: 8.1/10
+- TypeScript: 8.3/10
+- Tailwind CSS: 9.2/10
+- Node.js: 8.7/10
+- UI/UX Design: 9.4/10
+- Python: 7.9/10
 
 CONTACT FACTS
 - Email shown: shrravan.bala@gmail.com

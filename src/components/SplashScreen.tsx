@@ -9,7 +9,7 @@ const SplashScreen = ({ onEnter }: SplashScreenProps) => {
     <motion.div
       className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-background grid-bg"
       exit={{ opacity: 0, scale: 0.95 }}
-      transition={{ duration: 0.6, ease: "easeInOut" }}
+      transition={{ duration: 0.2, ease: "easeOut" }}
     >
       {/* Floating orb */}
       <motion.div
@@ -25,25 +25,25 @@ const SplashScreen = ({ onEnter }: SplashScreenProps) => {
       />
 
       <motion.div
-        initial={{ opacity: 0, y: 30 }}
+        initial={{ opacity: 0, y: 12 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.2 }}
+        transition={{ duration: 0.25 }}
         className="text-center z-10 px-4"
       >
         <motion.p
           className="font-mono text-sm tracking-[0.3em] uppercase text-muted-foreground mb-4"
-          initial={{ opacity: 0 }}
+          initial={{ opacity: 1 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 0.5 }}
+          transition={{ duration: 0.2 }}
         >
           Welcome to
         </motion.p>
 
         <motion.h1
           className="text-4xl sm:text-5xl md:text-7xl font-bold glow-text text-primary mb-8"
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.7, duration: 0.6 }}
+          transition={{ duration: 0.25 }}
         >
           My Portfolio
         </motion.h1>
@@ -52,9 +52,9 @@ const SplashScreen = ({ onEnter }: SplashScreenProps) => {
           onClick={onEnter}
           className="glass glow-border px-6 sm:px-8 py-3 sm:py-4 rounded-full font-medium text-foreground tracking-wide
                      hover:glow-border-strong transition-all duration-300 cursor-pointer group"
-          initial={{ opacity: 0 }}
+          initial={{ opacity: 1 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 1.2 }}
+          transition={{ duration: 0.2 }}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.98 }}
         >
@@ -73,9 +73,9 @@ const SplashScreen = ({ onEnter }: SplashScreenProps) => {
       {/* Bottom line decoration */}
       <motion.div
         className="absolute bottom-12 flex gap-2"
-        initial={{ opacity: 0 }}
+        initial={{ opacity: 0.6 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 1.5 }}
+        transition={{ duration: 0.25 }}
       >
         {[...Array(3)].map((_, i) => (
           <motion.div

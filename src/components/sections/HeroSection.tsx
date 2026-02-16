@@ -151,6 +151,8 @@ const HeroSection = () => {
                 src="/pfp.jpg"
                 alt="Portrait of Shrravan Bala"
                 className="w-full h-full object-cover object-[50%_24%]"
+                loading="eager"
+                decoding="async"
               />
 
               <div className="absolute inset-0 bg-gradient-to-t from-background/38 via-transparent to-background/10" />

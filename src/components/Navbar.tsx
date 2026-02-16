@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import { Moon } from 'lucide-react';
+
 
 const navItems = [
   { label: "About", href: "#about" },
@@ -7,6 +9,7 @@ const navItems = [
   { label: "Resume", href: "#resume" },
   { label: "Skills", href: "#skills" },
   { label: "Contact", href: "#contact" },
+  { label: "Dark Mode", href: "#", icon: <Moon size={16} /> },
 ];
 
 const Navbar = () => {
