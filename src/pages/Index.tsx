@@ -5,8 +5,11 @@ import ColorPicker from "@/components/ColorPicker";
 import ParticleBackground from "@/components/ParticleBackground";
 import CursorGlow from "@/components/CursorGlow";
 import PortfolioAssistantWidget from "@/components/PortfolioAssistantWidget";
+import InterestPrompt from "@/components/InterestPrompt";
 
 const ENTERED_STORAGE_KEY = "portfolio-entered";
+const INTEREST_PROMPT_SHOWN_KEY = "interest-prompt-shown";
+const INTEREST_PROMPT_DELAY_MS = 3 * 60 * 1000;
 
 const Index = () => {
   const [entered, setEntered] = useState(() => {
@@ -14,6 +17,7 @@ const Index = () => {
     return window.sessionStorage.getItem(ENTERED_STORAGE_KEY) === "true";
   });
   const [effectsEnabled, setEffectsEnabled] = useState(false);
+  const [showInterestPrompt, setShowInterestPrompt] = useState(false);
   const [accentHue, setAccentHue] = useState(210);
 
   const handleColorChange = (hue: number) => {
@@ -52,6 +56,31 @@ const Index = () => {
     };
   }, [entered]);
 
+  useEffect(() => {
+    if (!entered) return;
+    if (window.sessionStorage.getItem(INTEREST_PROMPT_SHOWN_KEY) === "true") return;
+
+    const timerId = window.setTimeout(() => {
+      setShowInterestPrompt(true);
+      window.sessionStorage.setItem(INTEREST_PROMPT_SHOWN_KEY, "true");
+    }, INTEREST_PROMPT_DELAY_MS);
+
+    return () => window.clearTimeout(timerId);
+  }, [entered]);
+
+  const handlePromptClose = () => {
+    setShowInterestPrompt(false);
+    window.sessionStorage.setItem(INTEREST_PROMPT_SHOWN_KEY, "true");
+  };
+
+  const handlePromptContact = () => {
+    const contactSection = document.querySelector("#contact");
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+    handlePromptClose();
+  };
+
   return (
     <div className="min-h-screen bg-background grid-bg">
       {effectsEnabled && <ParticleBackground />}
@@ -61,6 +90,9 @@ const Index = () => {
         <ColorPicker currentHue={accentHue} onHueChange={handleColorChange} />
       )}
       {entered && <PortfolioAssistantWidget />}
+      {entered && showInterestPrompt && (
+        <InterestPrompt onClose={handlePromptClose} onContact={handlePromptContact} />
+      )}
     </div>
   );
 };

@@ -7,15 +7,15 @@ const projects = [
   {
     title: "Personal Portfolio",
     desc: "This very site! A glassmorphic, interactive portfolio built with React, Framer Motion, and a custom dynamic theme system.",
-    tags: ["React", "TypeScript", "Tailwind"],
+    tags: ["React", "TypeScript", "Tailwind", "Vite"],
     link: "#",
     github: "https://github.com/Error403Allowed/myPortfolio",
     cover: "/PortfolioCover.png",
   },
   {
     title: "Analogy-based Learning App",
-    desc: "Analogix is a personalized study web app built with React + TypeScript (Vite), as well as Tailwind CSS, using AI integrations to teach through AI-crafted, personalised analogies, run quizzes, and provide dashboard insights with calendar capabilities and deadline tracking.",
-    tags: ["React", "Typescript", "Tailwind"],
+    desc: "Analogix is a personalized study web app built with React + TypeScript (Vite), as well as Tailwind CSS, that teaches high school students through AI-crafted, personalised analogies with Quizzy, and AI tutor. Analogix also uses quizzes, and provides dashboard insights with calendar capabilities and deadline tracking.",
+    tags: ["React", "Typescript", "Tailwind", "Next.js"],
     link: "https://analogix.vercel.app",
     github: "https://github.com/Error403Allowed/Analogix",
     cover: "/AnalogixCover.png",
@@ -23,7 +23,7 @@ const projects = [
   {
     title: "Coming Soon...",
     desc: "Stick around to see what I've got planned next!",
-    tags: ["Your Idea", "Your Stack"],
+    tags: ["???"],
     link: "#",
     github: "",
     cover: "",

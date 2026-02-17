@@ -1,7 +1,7 @@
 const STATIC_CACHE = "portfolio-static-v2";
 const RUNTIME_CACHE = "portfolio-runtime-v2";
 
-const STATIC_ASSETS = ["/", "/index.html", "/pfp.jpg", "/PortfolioCover.png", "/AnalogixCover.png"];
+const STATIC_ASSETS = ["/", "/index.html", "/logo.jpeg", "/PortfolioCover.png", "/AnalogixCover.png"];
 
 self.addEventListener("install", (event) => {
   event.waitUntil(

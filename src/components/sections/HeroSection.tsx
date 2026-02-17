@@ -83,7 +83,7 @@ const HeroSection = () => {
               transition={{ delay: 0.6, duration: 0.55 }}
             >
               Creative student developer building immersive products with clean
-              frontend engineering and practical AI integration.
+              fullstack engineering and practical AI integration.
             </motion.p>
 
             <motion.div
