@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { BrainCircuit, Code2, Paintbrush } from "lucide-react";
+import { Analytics } from "@vercel/analytics/next"
 
 const highlights = [
   { icon: Code2, title: "Innovative Ideas", desc: "Creating unique and practical solutions" },
