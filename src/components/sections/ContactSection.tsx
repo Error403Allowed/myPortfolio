@@ -1,11 +1,11 @@
 import { motion, useInView } from "framer-motion";
 import { FormEvent, useRef, useState } from "react";
-import { Mail, Phone, Send } from "lucide-react";
+import { Mail, Send } from "lucide-react";
 import { GitHubIcon, LinkedInIcon } from "../icons/BrandIcons";
 
 const socials = [
   { icon: GitHubIcon, label: "GitHub", href: "https://github.com/Error403Allowed", target: "_blank", rel: "noopener" },
-  { icon: LinkedInIcon, label: "LinkedIn", href: "#", target: "_blank", rel: "noopener" },
+  { icon: LinkedInIcon, label: "LinkedIn", href: "https://www.linkedin.com/in/shrravan-bala/", target: "_blank", rel: "noopener" },
   { icon: Mail, label: "Email", href: "mailto:shrravan.bala@gmail.com", target: "_blank", rel: "noopener" },
 ];
 
@@ -15,17 +15,45 @@ const ContactSection = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
+  const [errorMessage, setErrorMessage] = useState("");
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus("idle");
+    setErrorMessage("");
 
-    const subject = encodeURIComponent(`Portfolio contact from ${name}`);
-    const body = encodeURIComponent(
-      `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,
-    );
+    try {
+      const response = await fetch("/api/email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ name, email, message }),
+      });
 
-    window.location.href = `mailto:shrravan.bala@gmail.com?subject=${subject}&body=${body}`;
+      const data = await response.json();
+
+      if (response.ok) {
+        setSubmitStatus("success");
+        setName("");
+        setEmail("");
+        setMessage("");
+      } else {
+        setSubmitStatus("error");
+        setErrorMessage(data.error || "Failed to send message. Please try again.");
+      }
+    } catch (error) {
+      setSubmitStatus("error");
+      setErrorMessage("Network error. Please check your connection and try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
+
+      
 
   return (
     <section id="contact" className="py-24 md:py-32 px-4 sm:px-6" ref={ref}>
@@ -47,45 +75,7 @@ const ContactSection = () => {
           </p>
         </motion.div>
 
-        {/* Call / Contact Cards */}
-        <motion.div
-          className="grid sm:grid-cols-2 gap-4 mb-12"
-          initial={{ opacity: 0, y: 20 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ delay: 0.2 }}
-        >
-          <a
-            href="tel:+1234567890"
-            className="glass glow-border rounded-xl p-6 flex items-center gap-4
-                       hover:glow-border-strong transition-all duration-300 group"
-          >
-            <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
-              <Phone className="w-5 h-5 text-primary" />
-            </div>
-            <div className="text-left">
-              <p className="font-semibold text-foreground group-hover:text-primary transition-colors">
-                Call Me
-              </p>
-              <p className="text-sm text-muted-foreground">+61 423 920 080</p>
-            </div>
-          </a>
-          <a
-            href="mailto:hello@example.com"
-            className="glass glow-border rounded-xl p-6 flex items-center gap-4
-                       hover:glow-border-strong transition-all duration-300 group"
-          >
-            <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
-              <Mail className="w-5 h-5 text-primary" />
-            </div>
-            <div className="text-left">
-              <p className="font-semibold text-foreground group-hover:text-primary transition-colors">
-                Email Me
-              </p>
-              <p className="text-sm text-muted-foreground">shrravan.bala@gmail.com</p>
-            </div>
-          </a>
-        </motion.div>
-
+        {/* Email System */}
         <motion.form
           onSubmit={handleSubmit}
           className="glass glow-border rounded-2xl p-5 sm:p-6 text-left mb-12"
@@ -147,13 +137,33 @@ const ContactSection = () => {
             />
           </div>
 
-          <div className="mt-5 flex justify-end">
+          <div className="mt-5">
+            {submitStatus === "success" && (
+              <p className="mb-4 text-sm text-green-600 dark:text-green-400 font-medium">
+                ✓ Message sent successfully! I'll get back to you soon.
+              </p>
+            )}
+            {submitStatus === "error" && (
+              <p className="mb-4 text-sm text-red-600 dark:text-red-400 font-medium">
+                ✗ {errorMessage}
+              </p>
+            )}
             <button
               type="submit"
-              className="inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground hover:opacity-90 transition-opacity"
+              disabled={isSubmitting}
+              className="inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground hover:opacity-90 transition-opacity disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              Send Message
-              <Send className="w-4 h-4" />
+              {isSubmitting ? (
+                <>
+                  <span className="w-4 h-4 border-2 border-primary-foreground border-t-transparent rounded-full animate-spin" />
+                  Sending...
+                </>
+              ) : (
+                <>
+                  Send Message
+                  <Send className="w-4 h-4" />
+                </>
+              )}
             </button>
           </div>
         </motion.form>

@@ -14,7 +14,7 @@ const projects = [
   },
   {
     title: "Analogy-based Learning App",
-    desc: "Analogix is a personalized study web app built with React + TypeScript (Vite), as well as Tailwind CSS, that teaches high school students through AI-crafted, personalised analogies with Quizzy, and AI tutor. Analogix also uses quizzes, and provides dashboard insights with calendar capabilities and deadline tracking.",
+    desc: "Analogix is a personalized study web app built with React + TypeScript (Vite), as well as Tailwind CSS, that teaches high school students through AI-crafted responses tailored to the users interests with my ai, specifically trained on the ACARA (Australian) curriculum. Analogix also has quizzes, flashcards, note-taking and ai-generated, fully editable study guides. Students can also have their own profile, where they can track their progress and achievements, and even view their schedule, including their timetable and all of their assessments.",
     tags: ["React", "Typescript", "Tailwind", "Next.js"],
     link: "https://analogix.vercel.app",
     github: "https://github.com/Error403Allowed/Analogix",
