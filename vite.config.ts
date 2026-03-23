@@ -3,7 +3,7 @@ import react from "@vitejs/plugin-react-swc";
 import path from "path";
 import { componentTagger } from "lovable-tagger";
 // @ts-ignore
-import { createChatHandler } from "./server/chatHandler.mjs";
+import { createChatHandler } from "./server/groqHandler.mjs";
 // @ts-ignore
 import emailHandler from "./server/emailHandler.mjs";
 
