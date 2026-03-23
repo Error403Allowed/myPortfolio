@@ -26,7 +26,7 @@ const experience = [
 const resumeSkills = [
   { category: "Languages", items: ["JavaScript", "TypeScript", "Python"] },
   { category: "Frameworks", items: ["React", "Node.js", "Tailwind CSS"] },
-  { category: "Tools", items: ["Git", "VS Code", "Hugging Face"] },
+  { category: "Tools", items: ["Git", "VS Code", "Hugging Face", "Groq"] },
   { category: "AI", items: ["Prompt Engineering", "LLM API Integration", "Chatbot UX"] },
   { category: "Cloud/DevOps", items: ["AWS", "Supabase", "Vercel"] },
 ];
@@ -37,7 +37,7 @@ const certifications = [
     issuer: "Amazon Web Services",
     issued: "2026",
     desc: "Demonstrated foundational knowledge of AWS cloud concepts, services, and best practices for designing and operating cloud-native solutions.",
-    link: "",
+    link: "https://www.credly.com/badges/669b9b4c-22c7-4e0e-b401-5e063fa84848",
   },
 ];
 
