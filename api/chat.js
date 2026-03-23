@@ -1,4 +1,4 @@
-import { createChatHandler } from "../server/chatHandler.mjs";
+import { createChatHandler } from "../server/groqHandler.mjs";
 
 const handleChat = createChatHandler(process.env);
 

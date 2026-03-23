@@ -14,11 +14,19 @@ const projects = [
   },
   {
     title: "Analogy-based Learning App",
-    desc: "Analogix is a personalized study web app built with React + TypeScript (Vite), as well as Tailwind CSS, that teaches high school students through AI-crafted responses tailored to the users interests with my ai, specifically trained on the ACARA (Australian) curriculum. Analogix also has quizzes, flashcards, note-taking and ai-generated, fully editable study guides. Students can also have their own profile, where they can track their progress and achievements, and even view their schedule, including their timetable and all of their assessments.",
+    desc: "My biggest project yet! Analogix is a personalized study web app built with React + TypeScript (Vite), as well as Tailwind CSS, that teaches high school students through AI-crafted responses tailored to the users interests with my ai, specifically trained on the ACARA (Australian) curriculum. Analogix also has quizzes, flashcards, note-taking and ai-generated, fully editable study guides. Students can also have their own profile, where they can track their progress and achievements, and even view their schedule, including their timetable and all of their assessments.",
     tags: ["React", "Typescript", "Tailwind", "Next.js", "Groq", "Vercel", "Supabase"],
     link: "https://analogix.vercel.app",
     github: "https://github.com/Error403Allowed/Analogix",
     cover: "/AnalogixCover.png",
+  },
+  {
+    title: "Debunking Misinformation",
+    desc: "A school critical thinking project built with React, Tailwind CSS, and Next.js. It has a variety of sections such as quizzes, articles, videos, and more, all designed to help school students learn how to identify and debunk misinformation online.",
+    tags: ["React", "Tailwind", "Next.js", "Vercel"],
+    link: "https://debunking-misinformation.vercel.app",
+    github: "https://github.com/Error403Allowed/critical-thinking-project",
+    cover: "/DebunkingMisinformationCover.png",
   },
   {
     title: "Coming Soon...",

@@ -1,5 +1,5 @@
 import { createServer } from "node:http";
-import { createChatHandler } from "./chatHandler.mjs";
+import { createChatHandler } from "./groqHandler.mjs";
 
 const PORT = Number(process.env.CHAT_PROXY_PORT ?? 8787);
 const handleChatRequest = createChatHandler(process.env);
@@ -13,5 +13,5 @@ const server = createServer(async (req, res) => {
 });
 
 server.listen(PORT, () => {
-  console.log(`Chat proxy running at http://localhost:${PORT}${CHAT_ROUTE}`);
+  console.log(`Groq chat proxy running at http://localhost:${PORT}/api/chat`);
 });

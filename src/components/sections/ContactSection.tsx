@@ -5,7 +5,6 @@ import { GitHubIcon, LinkedInIcon } from "../icons/BrandIcons";
 
 const socials = [
   { icon: GitHubIcon, label: "GitHub", href: "https://github.com/Error403Allowed", target: "_blank", rel: "noopener" },
-  { icon: LinkedInIcon, label: "LinkedIn", href: "https://www.linkedin.com/in/shrravan-bala/", target: "_blank", rel: "noopener" },
   { icon: Mail, label: "Email", href: "mailto:shrravan.bala@gmail.com", target: "_blank", rel: "noopener" },
 ];
 
