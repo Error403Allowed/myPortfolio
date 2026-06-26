@@ -114,7 +114,7 @@ ${skillBarLines}
 CONTACT
 - Email: ${profile.email}
 - GitHub: ${profile.github}
-- LinkedIn: not listed on the portfolio yet.
+- LinkedIn: connect via email or GitHub for his LinkedIn profile
 
 HOW TO HANDLE COMMON QUESTIONS
 - "Best project to view first": ${chat.commonQuestions.bestProject}

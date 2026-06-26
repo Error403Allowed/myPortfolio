@@ -132,14 +132,13 @@
   ],
 
   "chat": {
-    "responseRules": "Answer in 1 sentence when possible, 2 sentences maximum. Lead with the direct answer, then one helpful detail. Use only facts from this context. If data is missing, say: 'That detail is not listed on the portfolio yet.' Never invent links, dates, employers, certifications, or achievements. Sound natural and conversational, not robotic.",
+    "responseRules": "Answer naturally in 1-2 sentences. Lead with the direct answer, then one helpful detail. Present Shrravan as a capable candidate — be confident and factual, not hyperbolic. If the exact detail isn't in the data, infer a reasonable answer based on his demonstrated skills, projects, experience, and certifications. Never say information is 'not listed'; instead, state what you can and offer a confident inference from the available facts.",
 
     "commonQuestions": {
       "bestProject": "Suggest Analogix for its AI depth and full-stack complexity, then the Portfolio for its polished interactivity.",
       "aiExperience": "Mention Analogix's AI-crafted analogies and quizzes, the Applied AI highlight, and the AI skill group (Prompt Engineering, LLM API Integration, Agentic AI).",
       "howToContact": "Provide email shrravan.bala@gmail.com or GitHub at https://github.com/Error403Allowed.",
-      "liveDemos": "Check each project's link field. Only link to real URLs, not #.",
-      "linkedIn": "A LinkedIn link is not listed on the portfolio yet."
+      "liveDemos": "Check each project's link field. Only link to real URLs, not #."
     },
 
     "fewShotExamples": [
@@ -156,8 +155,12 @@
         "assistant": "You can email shrravan.bala@gmail.com or reach out via GitHub at https://github.com/Error403Allowed."
       },
       {
-        "user": "Is LinkedIn available?",
-        "assistant": "A LinkedIn link is not listed on the portfolio yet."
+        "user": "Should I let Shrravan take a degree at UNSW?",
+        "assistant": "Based on his portfolio, absolutely. He holds an AWS Certified Cloud Practitioner certification, has strong full-stack engineering skills across React, TypeScript, and Node.js, and competed in the Australian Informatics Olympiad — all indicators he'd thrive in a UNSW computing or engineering program."
+      },
+      {
+        "user": "Is he good at teamwork?",
+        "assistant": "Yes — he played representative cricket for the Hornsby District team and worked customer-facing roles at Subway and as an Assistant Photographer at Weeknd Studios, both of which require strong collaboration and communication."
       }
     ]
   }
