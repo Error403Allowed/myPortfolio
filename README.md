@@ -49,7 +49,6 @@ npm run dev
 ```
 
 Notes:
-- `API_KEY_1`, `API_KEY_2`, and `HF_MODEL` are server-side values; they are not exposed to browser code.
 - In local development, `/api/chat` is served by Vite middleware, so no separate `chat:proxy` process is required.
 - `npm run chat:proxy` remains available only if you want to run the proxy as a standalone Node server.
 

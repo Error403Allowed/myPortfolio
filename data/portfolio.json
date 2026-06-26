@@ -1,0 +1,170 @@
+{
+  "profile": {
+    "name": "Shrravan Bala",
+    "tagline": "Creative student developer building immersive products with clean fullstack engineering and practical AI integration.",
+    "heroDescription": "Hi, I'm Shrravan! I'm a student developer building creative, practical projects. I use agentic AI to ship faster, but I know my languages and understand every codebase I work in. I'm open to opportunities and collaborations, so feel free to explore my work and reach out.",
+    "email": "shrravan.bala@gmail.com",
+    "github": "https://github.com/Error403Allowed",
+    "linkedin": null,
+    "primaryFocus": "fullstack engineering, UI/UX, practical AI integrations"
+  },
+
+  "about": {
+    "highlights": [
+      {
+        "title": "Innovative Ideas",
+        "desc": "Creating unique and practical solutions"
+      },
+      {
+        "title": "Design",
+        "desc": "Crafting beautiful and functional user interfaces"
+      },
+      {
+        "title": "Applied AI",
+        "desc": "Building useful AI features with LLM APIs"
+      }
+    ],
+    "prose": [
+      "I'm a developer who thrives at the intersection of creativity and technology. With a passion for clean design and efficient code, I build digital products that are both beautiful and functional, including AI-powered experiences.",
+      "My journey spans web development, UI/UX design, and AI integration. I focus on shipping practical features like chat assistants, prompt-driven flows, and model-backed tools that feel intentional for users."
+    ]
+  },
+
+  "projects": [
+    {
+      "title": "Personal Portfolio",
+      "desc": "This very site! A glassmorphic, interactive portfolio built with React, Framer Motion, and a custom dynamic theme system.",
+      "tags": ["React", "TypeScript", "Tailwind", "Vite", "Framer Motion", "Vercel", "Groq"],
+      "link": null,
+      "github": "https://github.com/Error403Allowed/myPortfolio",
+      "cover": "/PortfolioCover.png"
+    },
+    {
+      "title": "Analogix — Analogy-based Learning App",
+      "desc": "My biggest project yet! Analogix is a personalized study web app built with React + TypeScript (Vite), as well as Tailwind CSS, that teaches high school students through AI-crafted responses tailored to the users interests with my ai, specifically trained on the ACARA (Australian) curriculum. Analogix also has quizzes, flashcards, note-taking and ai-generated, fully editable study guides. Students can also have their own profile, where they can track their progress and achievements, and even view their schedule, including their timetable and all of their assessments. This repository is kept private for privacy and scalability reasons, but I am happy to discuss collaboration or opportunities further upon request.",
+      "tags": ["React", "Typescript", "Tailwind", "Next.js", "Groq", "Vercel", "Supabase", "MCPs"],
+      "link": "https://analogix.vercel.app",
+      "github": "https://github.com/Error403Allowed/Analogix",
+      "cover": "/AnalogixCover.png",
+      "recommended": true
+    },
+    {
+      "title": "Quantus",
+      "desc": "This is a machine learning model that I have built from scratch using pytorch. I have built a neural network that calculates various stock indicators against any stock in the US (which the user can choose by inputting a stock ticker). It is built entirely using python and pytorch and is run in CLI (command-line interface).",
+      "tags": ["Python", "Pytorch", "Machine Learning", "Neural Network", "CLI"],
+      "link": null,
+      "github": "https://github.com/Error403Allowed/Quantus",
+      "cover": "/Quantus.png"
+    },
+    {
+      "title": "PDF BLOB Extractor",
+      "desc": "This is a small lightweight utility tool I built in python that can retrieve PDF documents stored in an Oracle Database as BLOB (Binary Large Object) data. The utility is built entirely in python and using some SQL.",
+      "tags": ["Python", "SQL", "Oracle"],
+      "link": "https://debunking-misinformation.vercel.app",
+      "github": "https://github.com/Error403Allowed/PDF-BLOB-Extractor",
+      "cover": "/PDF-BLOB.png"
+    }
+  ],
+
+  "experience": [
+    {
+      "role": "Assistant Photographer",
+      "company": "Weeknd Studios",
+      "period": "2023 September - 2023 November",
+      "desc": "Captured live streaming and provided videography and photography services for events"
+    },
+    {
+      "role": "Crew Member",
+      "company": "Subway",
+      "period": "2024 May - 2024 July",
+      "desc": "Maintained store operations and provided customer service in a fast-paced environment"
+    },
+    {
+      "role": "Internship",
+      "company": "TruFyre",
+      "period": "2025 December - 2026 February",
+      "desc": "Assisted in development processes as well as cloud infrastructure"
+    }
+  ],
+
+  "skillCategories": [
+    { "category": "Languages", "items": ["JavaScript", "TypeScript", "Python"] },
+    { "category": "Frameworks", "items": ["React", "Node.js", "Tailwind CSS"] },
+    { "category": "Tools", "items": ["Git", "VS Code", "Hugging Face", "Groq"] },
+    { "category": "AI", "items": ["Prompt Engineering", "LLM API Integration", "Agentic AI"] },
+    { "category": "Cloud/DevOps", "items": ["AWS", "Supabase", "Vercel"] }
+  ],
+
+  "skillProficiency": [
+    { "name": "React / Next.js", "score": 8 },
+    { "name": "TypeScript", "score": 8 },
+    { "name": "Tailwind CSS", "score": 9 },
+    { "name": "Node.js", "score": 8 },
+    { "name": "UI/UX Design", "score": 9 },
+    { "name": "Python", "score": 7 },
+    { "name": "Docker", "score": 6 },
+    { "name": "Kubernetes", "score": 8 },
+    { "name": "Terraform", "score": 7 },
+    { "name": "AWS", "score": 8 },
+    { "name": "Serverless", "score": 7 }
+  ],
+
+  "certifications": [
+    {
+      "title": "AWS Certified Cloud Practitioner",
+      "issuer": "Amazon Web Services",
+      "issued": "2026",
+      "desc": "This certification shows my fundamental knowledge of AWS cloud concepts, services, and best practices for designing and operating cloud-native solutions.",
+      "link": "https://www.credly.com/badges/669b9b4c-22c7-4e0e-b401-5e063fa84848"
+    }
+  ],
+
+  "extracurriculars": [
+    {
+      "title": "Australian Informatics Olympiad",
+      "role": "Participant",
+      "desc": "Competed in the Australian Informatics Olympiad, a prestigious programming competition that challenges participants with complex algorithmic problems, fostering problem-solving skills and coding proficiency."
+    },
+    {
+      "title": "Chess Tournaments",
+      "role": "Participant and Winner",
+      "desc": "Participated in and won multiple local and regional chess tournaments, demonstrating strategic thinking and competitive excellence."
+    },
+    {
+      "title": "Hornsby District Representative Cricket Team",
+      "role": "Player",
+      "desc": "Played cricket for the Hornsby District Representative Cricket Team, contributing to team success and developing teamwork and sportsmanship skills."
+    }
+  ],
+
+  "chat": {
+    "responseRules": "Answer in 1 sentence when possible, 2 sentences maximum. Lead with the direct answer, then one helpful detail. Use only facts from this context. If data is missing, say: 'That detail is not listed on the portfolio yet.' Never invent links, dates, employers, certifications, or achievements. Sound natural and conversational, not robotic.",
+
+    "commonQuestions": {
+      "bestProject": "Suggest Analogix for its AI depth and full-stack complexity, then the Portfolio for its polished interactivity.",
+      "aiExperience": "Mention Analogix's AI-crafted analogies and quizzes, the Applied AI highlight, and the AI skill group (Prompt Engineering, LLM API Integration, Agentic AI).",
+      "howToContact": "Provide email shrravan.bala@gmail.com or GitHub at https://github.com/Error403Allowed.",
+      "liveDemos": "Check each project's link field. Only link to real URLs, not #.",
+      "linkedIn": "A LinkedIn link is not listed on the portfolio yet."
+    },
+
+    "fewShotExamples": [
+      {
+        "user": "What is this portfolio about?",
+        "assistant": "It showcases Shrravan Bala's fullstack, UI/UX, and practical AI work through projects, resume highlights, and contact info."
+      },
+      {
+        "user": "Do you have AI experience?",
+        "assistant": "Yes — Analogix uses AI-crafted personalized analogies and quizzes, and the resume lists prompt engineering and LLM API integration."
+      },
+      {
+        "user": "How can I contact Shrravan?",
+        "assistant": "You can email shrravan.bala@gmail.com or reach out via GitHub at https://github.com/Error403Allowed."
+      },
+      {
+        "user": "Is LinkedIn available?",
+        "assistant": "A LinkedIn link is not listed on the portfolio yet."
+      }
+    ]
+  }
+}

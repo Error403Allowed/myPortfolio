@@ -7,7 +7,7 @@ const projects = [
   {
     title: "Personal Portfolio",
     desc: "This very site! A glassmorphic, interactive portfolio built with React, Framer Motion, and a custom dynamic theme system.",
-    tags: ["React", "TypeScript", "Tailwind", "Vite", "Framer Motion", "Vercel", "HuggingFace"],
+    tags: ["React", "TypeScript", "Tailwind", "Vite", "Framer Motion", "Vercel", "Groq"],
     link: "#",
     github: "https://github.com/Error403Allowed/myPortfolio",
     cover: "/PortfolioCover.png",
