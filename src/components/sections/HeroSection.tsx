@@ -26,6 +26,12 @@ const HeroSection = () => {
     mouseY.set(0);
   };
 
+  const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    const el = document.querySelector(href);
+    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
   return (
     <section
       id="hero"
@@ -82,9 +88,7 @@ const HeroSection = () => {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.6, duration: 0.55 }}
             >
-              Creative student developer building immersive products with clean
-              fullstack engineering and practical AI integration.
-            </motion.p>
+              Hi, I’m Shrravan! I’m a student developer building creative, practical projects. I use agentic AI workflows and other tools to create innovative solutions faster, while still having the important knowledge of various languages and fully understanding any codebase I own. I’m open to opportunities and collaborations, so feel free to explore my work and reach out.            </motion.p>
 
             <motion.div
               className="flex flex-col sm:flex-row items-center md:items-start justify-center md:justify-start gap-3 sm:gap-4"
@@ -94,6 +98,7 @@ const HeroSection = () => {
             >
               <motion.a
                 href="#projects"
+                onClick={(e) => handleScroll(e, "#projects")}
                 className="glass glow-border w-full sm:w-auto px-6 py-3 rounded-full font-medium text-foreground text-center hover:glow-border-strong transition-all duration-300"
                 whileHover={{ scale: 1.04, y: -2 }}
                 whileTap={{ scale: 0.98 }}
@@ -102,6 +107,7 @@ const HeroSection = () => {
               </motion.a>
               <motion.a
                 href="#contact"
+                onClick={(e) => handleScroll(e, "#contact")}
                 className="w-full sm:w-auto px-6 py-3 rounded-full font-medium bg-primary text-primary-foreground text-center hover:opacity-90 transition-all duration-300"
                 whileHover={{ scale: 1.04, y: -2 }}
                 whileTap={{ scale: 0.98 }}

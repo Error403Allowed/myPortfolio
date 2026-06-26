@@ -27,7 +27,7 @@ const resumeSkills = [
   { category: "Languages", items: ["JavaScript", "TypeScript", "Python"] },
   { category: "Frameworks", items: ["React", "Node.js", "Tailwind CSS"] },
   { category: "Tools", items: ["Git", "VS Code", "Hugging Face", "Groq"] },
-  { category: "AI", items: ["Prompt Engineering", "LLM API Integration", "Chatbot UX"] },
+  { category: "AI", items: ["Prompt Engineering", "LLM API Integration", "Agentic AI"] },
   { category: "Cloud/DevOps", items: ["AWS", "Supabase", "Vercel"] },
 ];
 
@@ -36,7 +36,7 @@ const certifications = [
     title: "AWS Certified Cloud Practitioner",
     issuer: "Amazon Web Services",
     issued: "2026",
-    desc: "Demonstrated foundational knowledge of AWS cloud concepts, services, and best practices for designing and operating cloud-native solutions.",
+    desc: "This certification shows my fundamental knowledge of AWS cloud concepts, services, and best practices for designing and operating cloud-native solutions.",
     link: "https://www.credly.com/badges/669b9b4c-22c7-4e0e-b401-5e063fa84848",
   },
 ];
@@ -187,7 +187,7 @@ const ResumeSection = () => {
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 mt-4 text-xs font-mono tracking-wide text-primary hover:opacity-80 transition-opacity"
                   >
-                    Verify Credential
+                    Check it out here! 
                     <ExternalLink className="w-3.5 h-3.5" />
                   </a>
                 ) : null}
