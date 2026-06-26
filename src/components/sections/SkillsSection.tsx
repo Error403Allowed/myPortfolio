@@ -7,12 +7,12 @@ const skills = [
   { name: "Tailwind CSS", score: 9 },
   { name: "Node.js", score: 8 },
   { name: "UI/UX Design", score: 9 },
-  { name: "Python", score: 7 },
+  { name: "Python", score: 8 },
   { name: "Docker", score: 6 },
   { name: "Kubernetes", score: 8},
   { name: "Terraform", score: 7},
   { name: "AWS", score: 8},
-  { name: "Serverless", score: 7}
+  { name: "Serverless", score: 7},
 ];
 
 const SkillsSection = () => {

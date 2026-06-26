@@ -68,22 +68,16 @@
 
   "experience": [
     {
-      "role": "Assistant Photographer",
-      "company": "Weeknd Studios",
-      "period": "2023 September - 2023 November",
-      "desc": "Captured live streaming and provided videography and photography services for events"
-    },
-    {
-      "role": "Crew Member",
-      "company": "Subway",
-      "period": "2024 May - 2024 July",
-      "desc": "Maintained store operations and provided customer service in a fast-paced environment"
-    },
-    {
       "role": "Internship",
       "company": "TruFyre",
       "period": "2025 December - 2026 February",
       "desc": "Assisted in development processes as well as cloud infrastructure"
+    },
+    {
+      "role": "Internship",
+      "company": "Transport for NSW",
+      "period": "22-26 June, 2026",
+      "desc": "Assisted in platforms and integrations, learnt extensively on cloud, platforms and networking, and contributed to meetings and built programs which are actively used"
     }
   ],
 
@@ -101,8 +95,8 @@
     { "name": "Tailwind CSS", "score": 9 },
     { "name": "Node.js", "score": 8 },
     { "name": "UI/UX Design", "score": 9 },
-    { "name": "Python", "score": 7 },
-    { "name": "Docker", "score": 6 },
+    { "name": "Python", "score": 8 },
+    { "name": "Docker", "score": 7 },
     { "name": "Kubernetes", "score": 8 },
     { "name": "Terraform", "score": 7 },
     { "name": "AWS", "score": 8 },
