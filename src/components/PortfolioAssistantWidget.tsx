@@ -141,7 +141,7 @@ const PortfolioAssistantWidget = () => {
               </div>
               <div>
                 <p className="text-sm font-semibold text-foreground">AI Assistant</p>
-                <p className="text-xs text-muted-foreground">I've read the whole portfolio so you don't have to!</p>
+                <p className="text-xs text-muted-foreground">Ask me anything about Shrravan!</p>
               </div>
             </div>
 
