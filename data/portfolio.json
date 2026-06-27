@@ -41,7 +41,7 @@
     },
     {
       "title": "Analogix — Analogy-based Learning App",
-      "desc": "My biggest project yet! Analogix is a personalized study web app built with React + TypeScript (Vite), as well as Tailwind CSS, that teaches high school students through AI-crafted responses tailored to the users interests with my ai, specifically trained on the ACARA (Australian) curriculum. Analogix also has quizzes, flashcards, note-taking and ai-generated, fully editable study guides. Students can also have their own profile, where they can track their progress and achievements, and even view their schedule, including their timetable and all of their assessments. This repository is kept private for privacy and scalability reasons, but I am happy to discuss collaboration or opportunities further upon request.",
+      "desc": "My biggest project yet! Analogix is a personalized study web app built with React + TypeScript (next.js), as well as Tailwind CSS, that teaches high school students through AI-crafted responses tailored to the users interests with my ai, specifically trained on the ACARA (Australian) curriculum. Analogix also has quizzes, flashcards, note-taking and ai-generated, fully editable study guides. Students can also have their own profile, where they can track their progress and achievements, and even view their schedule, including their timetable and all of their assessments. This repository is kept private for privacy and scalability reasons, but I am happy to discuss collaboration or opportunities further upon request.",
       "tags": ["React", "Typescript", "Tailwind", "Next.js", "Groq", "Vercel", "Supabase", "MCPs"],
       "link": "https://analogix.vercel.app",
       "github": "https://github.com/Error403Allowed/Analogix",
