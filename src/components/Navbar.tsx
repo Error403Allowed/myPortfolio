@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Moon, Sun } from "lucide-react";
 import { useThemeMode } from "./lightDark";
+import { GitHubIcon } from "./icons/BrandIcons";
 
 
 const navItems = [
@@ -59,6 +60,15 @@ const Navbar = () => {
               {item.label}
             </a>
           ))}
+          <a
+            href="https://github.com/Error403Allowed"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="glass rounded-full p-2 text-muted-foreground hover:text-primary transition-colors duration-300"
+            title="GitHub"
+          >
+            <GitHubIcon className="w-4 h-4" />
+          </a>
           <button
             type="button"
             onClick={toggleTheme}
@@ -81,6 +91,15 @@ const Navbar = () => {
               {item.label}
             </a>
           ))}
+          <a
+            href="https://github.com/Error403Allowed"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="glass rounded-full p-2 text-muted-foreground hover:text-primary transition-colors duration-300 shrink-0"
+            title="GitHub"
+          >
+            <GitHubIcon className="w-3.5 h-3.5" />
+          </a>
           <button
             type="button"
             onClick={toggleTheme}

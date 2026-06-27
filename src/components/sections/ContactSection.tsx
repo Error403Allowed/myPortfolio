@@ -1,12 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import { FormEvent, useRef, useState } from "react";
-import { Mail, Send } from "lucide-react";
-import { GitHubIcon, LinkedInIcon } from "../icons/BrandIcons";
-
-const socials = [
-  { icon: GitHubIcon, label: "GitHub", href: "https://github.com/Error403Allowed", target: "_blank", rel: "noopener" },
-  { icon: Mail, label: "Email", href: "mailto:shrravan.bala@gmail.com", target: "_blank", rel: "noopener" },
-];
+import { Send } from "lucide-react";
 
 const ContactSection = () => {
   const ref = useRef(null);
@@ -166,27 +160,6 @@ const ContactSection = () => {
             </button>
           </div>
         </motion.form>
-
-        <motion.div
-          className="flex items-center justify-center gap-4"
-          initial={{ opacity: 0 }}
-          animate={inView ? { opacity: 1 } : {}}
-          transition={{ delay: 0.4 }}
-        >
-          {socials.map((social) => (
-            <a
-              key={social.label}
-              href={social.href}
-              target={social.target}
-              rel={social.rel}
-              className="glass w-12 h-12 rounded-full flex items-center justify-center
-                         hover:glow-border transition-all duration-300 group"
-              title={social.label}
-            >
-              <social.icon className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
-            </a>
-          ))}
-        </motion.div>
 
         <motion.p
           className="mt-20 text-sm text-muted-foreground font-mono"

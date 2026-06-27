@@ -1,25 +1,28 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { Briefcase, Award, Heart, ExternalLink } from "lucide-react";
+import { Briefcase, GraduationCap, Award, Heart, ExternalLink } from "lucide-react";
 
 const experience = [
-  {
-    role: "Assistant Photographer",
-    company: "Weeknd Studios",
-    period: "2023 September - 2023 November",
-    desc: "Captured live streaming and provided videography and photography services for events",
-  },
-  {
-    role: "Crew Member",
-    company: "Subway",
-    period: "2024 May - 2024 July",
-    desc: "Maintained store operations and provided customer service in a fast-paced environment",
-  },
   {
     role: "Internship",
     company: "TruFyre",
     period: "2025 December - 2026 February",
     desc: "Assisted in development processes as well as cloud infrastructure"
+  },
+  {
+    role: "Internship",
+    company: "Transport for NSW",
+    period: "22-26 June, 2026",
+    desc: "Assisted in platforms and integrations, learnt extensively on cloud, platforms and networking, and contributed to meetings and built programs which are actively used"
+  }
+];
+
+const education = [
+  {
+    degree: "High School/Higher School Certificate",
+    school: "Penrith Selective High School",
+    period: "2023 - 2028",
+    desc: "A strong student in Penrith Selective High School, with numerous achievements such as being in <2.5% of Australian mathematicians in the AMC, and ~88% in ICAS Reach."
   }
 ];
 
@@ -112,12 +115,45 @@ const ResumeSection = () => {
           </div>
         </motion.div>
 
-        {/* Skills */}
+        {/* Education */}
         <motion.div
           className="mb-16"
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ delay: 0.4 }}
+        >
+          <div className="flex items-center gap-3 mb-8">
+            <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+              <GraduationCap className="w-5 h-5 text-primary" />
+            </div>
+            <h3 className="text-xl font-bold text-foreground">Education</h3>
+          </div>
+          <div className="space-y-6 ml-2 sm:ml-5 border-l border-border pl-4 sm:pl-8">
+            {education.map((edu, i) => (
+              <motion.div
+                key={edu.period}
+                className="glass glow-border rounded-xl p-6 hover:glow-border-strong transition-all duration-300"
+                initial={{ opacity: 0, x: -20 }}
+                animate={inView ? { opacity: 1, x: 0 } : {}}
+                transition={{ delay: 0.5 + i * 0.1 }}
+              >
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2">
+                  <h4 className="font-semibold text-foreground">{edu.degree}</h4>
+                  <span className="font-mono text-xs text-primary">{edu.period}</span>
+                </div>
+                <p className="text-sm text-primary/80 mb-2">{edu.school}</p>
+                <p className="text-sm text-muted-foreground leading-relaxed">{edu.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Skills */}
+        <motion.div
+          className="mb-16"
+          initial={{ opacity: 0, y: 30 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ delay: 0.6 }}
         >
           <div className="flex items-center gap-3 mb-8">
             <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
@@ -132,7 +168,7 @@ const ResumeSection = () => {
                 className="glass glow-border rounded-xl p-5 hover:glow-border-strong transition-all duration-300"
                 initial={{ opacity: 0, y: 20 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
-                transition={{ delay: 0.5 + i * 0.1 }}
+                transition={{ delay: 0.7 + i * 0.1 }}
               >
                 <h4 className="font-semibold text-foreground mb-3">{group.category}</h4>
                 <div className="flex flex-wrap gap-2">
@@ -155,7 +191,7 @@ const ResumeSection = () => {
           className="mb-20"
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ delay: 0.6 }}
+          transition={{ delay: 0.8 }}
         >
           <div className="flex items-center gap-3 mb-8">
             <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
@@ -172,7 +208,7 @@ const ResumeSection = () => {
                 }`}
                 initial={{ opacity: 0, y: 20 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
-                transition={{ delay: 0.7 + i * 0.1 }}
+                transition={{ delay: 0.9 + i * 0.1 }}
               >
                 <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-2">
                   <h4 className="font-semibold text-foreground">{item.title}</h4>
@@ -200,7 +236,7 @@ const ResumeSection = () => {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ delay: 0.6 }}
+          transition={{ delay: 1.0 }}
         >
           <div className="flex items-center gap-3 mb-8">
             <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
@@ -215,7 +251,7 @@ const ResumeSection = () => {
                 className="glass glow-border rounded-xl p-5 hover:glow-border-strong transition-all duration-300"
                 initial={{ opacity: 0, y: 20 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
-                transition={{ delay: 0.7 + i * 0.1 }}
+                transition={{ delay: 1.1 + i * 0.1 }}
               >
                 <h4 className="font-semibold text-foreground mb-1">{item.title}</h4>
                 <p className="text-xs text-primary mb-2">{item.role}</p>
