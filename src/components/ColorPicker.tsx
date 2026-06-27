@@ -9,11 +9,11 @@ interface ColorPickerProps {
 
 const presets = [
   { hue: 210, label: "Blue" },
-  { hue: 180, label: "Cyan" },
-  { hue: 260, label: "Purple" },
-  { hue: 330, label: "Pink" },
+  { hue: 0, label: "Red" },
   { hue: 140, label: "Green" },
   { hue: 30, label: "Orange" },
+  { hue: 260, label: "Purple" },
+  { hue: 330, label: "Pink" },
 ];
 
 const ColorPicker = ({ currentHue, onHueChange }: ColorPickerProps) => {
