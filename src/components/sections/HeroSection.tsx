@@ -88,7 +88,7 @@ const HeroSection = () => {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.6, duration: 0.55 }}
             >
-              Hi, I’m Shrravan! I’m a student developer building creative, practical projects. I build efficiently using modern, AI-assisted workflows, but I know my languages and understand every codebase I work in. I’m open to opportunities and collaborations, so feel free to explore my work and reach out.            </motion.p>
+              Hi, I’m Shrravan! I’m a student developer building creative, practical projects. I build efficiently using modern AI-assisted workflows, but I know my languages and understand every codebase I work in, which is what sets me apart from vibe coders. I’m always open to opportunities and collaborations, so feel free to explore my work and reach out.            </motion.p>
 
             <motion.div
               className="flex flex-col sm:flex-row items-center md:items-start justify-center md:justify-start gap-3 sm:gap-4"
